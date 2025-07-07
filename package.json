@@ -61,7 +61,7 @@
   ],
   "scripts": {
     "build": "tsc && rollup -c scripts/rollup.config.js",
-    "build.prod": "tsc && rollup -c scripts/rollup.config.js --configReleaseBuild",
+    "build.prod": "tsc && rollup -c scripts/rollup.config.js --configReleaseBuild && tar -zcvf lib.tar lib && gzip lib.tar",
     "build.site": "cd docs && npm i && npm run build",
     "build.watch": "rollup -c scripts/rollup.config.js -w --configDev",
     "change": "changeset",
