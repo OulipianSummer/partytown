@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*.*.*"
 
 jobs:
   release:
@@ -48,6 +50,12 @@ jobs:
       #   run: pnpm release.pkg-pr-new
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #
+
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: 'lib.tar.gz'
 
       - name: Create Release Pull Request or Publish
         if: github.ref == 'refs/heads/main'
