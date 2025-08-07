@@ -63,8 +63,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload Release Assets
-        uses: softprops/action-gh-release@v2
+      - name: Upload release asset
+        shell: bash
         if: github.ref_type == 'tag'
-        with:
-          files: 'lib.tar.gz'
+        run : gh release ${{ github.ref }} upload './lib.tar.gz#Compiled lib'
