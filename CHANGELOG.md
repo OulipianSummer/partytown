@@ -1,5 +1,13 @@
 # @qwik.dev/partytown
 
+## 0.13.0
+
+### Minor Changes
+
+- ✨ add new documentation for Drupal integration (by [@OulipianSummer](https://github.com/OulipianSummer) in [#701](https://github.com/QwikDev/partytown/pull/701))
+
+  This commit adds a new section to the integrations section of the documentation, detailing how to install, configure, and use the Drupal integration for PartyTown.
+
 ## 0.12.0
 
 ### Minor Changes
